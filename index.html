@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Escuela Secundaria Oficial N.º 298 | Dr. Jorge Jiménez Cantú</title>
+
+<meta name="description" content="Sitio informativo de la Escuela Secundaria Oficial N.º 298 Dr. Jorge Jiménez Cantú, en Nezahualcóyotl, Estado de México.">
+
+<style>
+:root {
+  --azul: #102b4e;
+  --azul2: #24476b;
+  --dorado: #c5a15a;
+  --fondo: #f3f5f8;
+  --blanco: #ffffff;
+  --texto: #303b4b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+header {
+  background: var(--azul);
+  color: white;
+  padding: 20px 6%;
+  border-bottom: 4px solid var(--dorado);
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  color: var(--dorado);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sublogo {
+  font-size: 13px;
+  color: white;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--dorado);
+}
+
+.portada {
+  min-height: 540px;
+  padding: 80px 8%;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(9,29,52,.94), rgba(9,29,52,.45)),
+    url("https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+  background-attachment: scroll;
+  background-position: center 0%;
+  border-bottom: 5px solid var(--dorado);
+  will-change: background-position;
+}
+
+.portada-contenido {
+  max-width: 800px;
+}
+
+.etiqueta {
+  color: var(--dorado);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.portada h1 {
+  font-size: clamp(32px, 5vw, 53px);
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.portada p {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.boton {
+  display: inline-block;
+  background: var(--dorado);
+  color: var(--azul);
+  padding: 12px 20px;
+  margin: 5px 5px 5px 0;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.boton:hover {
+  background: #e6d3a8;
+}
+
+.boton-contorno {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+section {
+  padding: 60px 8%;
+  scroll-margin-top: 20px;
+}
+
+.blanco {
+  background: white;
+}
+
+.titulo {
+  text-align: center;
+  color: var(--azul);
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.linea {
+  width: 70px;
+  height: 4px;
+  background: var(--dorado);
+  margin: 0 auto 25px;
+}
+
+.intro {
+  max-width: 850px;
+  text-align: center;
+  margin: 0 auto 30px;
+}
+
+.columnas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: center;
+  gap: 35px;
+}
+
+.columnas img {
+  height: 330px;
+  border-radius: 5px;
+}
+
+h3 {
+  color: var(--azul2);
+  margin: 12px 0 8px;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 23px;
+  margin-top: 28px;
+}
+
+.tarjeta {
+  background: white;
+  border-top: 4px solid var(--dorado);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(16,43,78,.09);
+  padding-bottom: 18px;
+}
+
+.tarjeta img {
+  height: 200px;
+}
+
+.tarjeta h3,
+.tarjeta p,
+.tarjeta ul {
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.tarjeta h3 {
+  margin-top: 15px;
+}
+
+.tarjeta p,
+.tarjeta ul {
+  margin-top: 10px;
+}
+
+.tarjeta ul {
+  padding-left: 22px;
+  margin-bottom: 12px;
+}
+
+.lista {
+  padding-left: 24px;
+  margin: 18px 0;
+}
+
+.aviso {
+  margin-top: 25px;
+  padding: 18px;
+  background: #f8f1e3;
+  border-left: 5px solid var(--dorado);
+}
+
+.comunicado {
+  background: white;
+  padding: 22px;
+  border-left: 4px solid var(--dorado);
+  box-shadow: 0 4px 14px #102b4e12;
+}
+
+.comunicado h3 {
+  margin-top: 0;
+}
+
+.contacto {
+  text-align: center;
+  background: #e8edf4;
+}
+
+.contacto p {
+  margin: 8px 0;
+}
+
+footer {
+  background: var(--azul);
+  color: white;
+  text-align: center;
+  padding: 30px 7%;
+  border-top: 4px solid var(--dorado);
+}
+
+footer strong,
+footer a {
+  color: var(--dorado);
+}
+
+footer a {
+  text-decoration: none;
+}
+
+/* Preparación de imágenes para GSAP */
+.columnas img,
+.tarjeta img {
+  will-change: transform, clip-path;
+  transform-origin: center center;
+}
+
+@media (max-width: 650px) {
+  header {
+    text-align: center;
+  }
+
+  .encabezado {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .portada {
+    min-height: 450px;
+    padding: 50px 6%;
+  }
+
+  section {
+    padding: 45px 6%;
+  }
+
+  .titulo {
+    font-size: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header id="inicio">
+  <div class="encabezado">
+    <div>
+      <div class="logo">ESCUELA SECUNDARIA OFICIAL N.º 298</div>
+      <div class="sublogo">"Dr. Jorge Jiménez Cantú"</div>
+    </div>
+    <div>NEZAHUALCÓYOTL, ESTADO DE MÉXICO</div>
+  </div>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">¿Quiénes somos?</a>
+    <a href="#sobre">Mi escuela</a>
+    <a href="#grados">Grados y temarios</a>
+    <a href="#actividades">Actividades</a>
+    <a href="#inscripciones">Inscripciones</a>
+    <a href="#comunicados">Comunicados</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contáctanos</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- INICIO -->
+<div class="portada">
+  <div class="portada-contenido">
+    <p class="etiqueta">EDUCACIÓN · RESPETO · SUPERACIÓN</p>
+
+    <h1>
+      Escuela Secundaria Oficial N.º 298<br>
+      "Dr. Jorge Jiménez Cantú"
+    </h1>
+
+    <p>
+      Una comunidad educativa comprometida con el aprendizaje,
+      los valores y la formación de las nuevas generaciones.
+    </p>
+
+    <a class="boton" href="#nosotros">Conoce nuestra escuela</a>
+
+    <a class="boton boton-contorno"
+       href="https://maps.app.goo.gl/7DHBachPP4Lbt4Tp8?g_st=aw"
+       target="_blank" rel="noopener">
+      Cómo llegar
+    </a>
+  </div>
+</div>
+
+<!-- QUIENES SOMOS -->
+<section id="nosotros" class="blanco">
+  <h2 class="titulo">¿Quiénes somos?</h2>
+  <div class="linea"></div>
+
+  <p class="intro">
+    Somos una comunidad educativa que busca favorecer el aprendizaje,
+    la convivencia y el desarrollo integral de los estudiantes.
+    Nuestra secundaria representa un espacio para adquirir conocimientos,
+    fortalecer valores y prepararse para el futuro.
+  </p>
+
+  <div class="columnas">
+    <div>
+      <h3>Nuestra misión</h3>
+      <p>
+        Contribuir a la formación académica y personal de los alumnos
+        mediante el aprendizaje, el respeto y la responsabilidad.
+      </p>
+
+      <h3>Nuestra visión</h3>
+      <p>
+        Impulsar una comunidad escolar en la que los estudiantes
+        desarrollen sus capacidades y alcancen sus metas.
+      </p>
+
+      <h3>Nuestros valores</h3>
+      <p>
+        Honestidad, respeto, responsabilidad, solidaridad,
+        inclusión y trabajo en equipo.
+      </p>
+    </div>
+
+    <img
+      src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
+      alt="Estudiantes aprendiendo en un aula">
+  </div>
+</section>
+
+<!-- SOBRE MI ESCUELA -->
+<section id="sobre">
+  <h2 class="titulo">Sobre mi escuela</h2>
+  <div class="linea"></div>
+
+  <p class="intro">
+    La Escuela Secundaria Oficial N.º 298 "Dr. Jorge Jiménez Cantú"
+    se encuentra en Nezahualcóyotl, Estado de México. La secundaria
+    es una etapa importante para desarrollar conocimientos,
+    habilidades, amistades y valores que acompañarán a los jóvenes
+    durante su vida.
+  </p>
+
+  <div class="tarjetas">
+    <article class="tarjeta">
+      <img
+        src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80"
+        alt="Edificio escolar ilustrativo">
+      <h3>Nuestra institución</h3>
+      <p>Un espacio dedicado a la educación y al desarrollo estudiantil.</p>
+    </article>
+
+    <article class="tarjeta">
+      <img
+        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+        alt="Estudiantes realizando actividades académicas">
+      <h3>Aprendizaje</h3>
+      <p>Promovemos el conocimiento, la curiosidad y la participación.</p>
+    </article>
+
+    <article class="tarjeta">
+      <img
+        src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80"
+        alt="Jóvenes realizando actividades grupales">
+      <h3>Convivencia</h3>
+      <p>Fomentamos el respeto y la colaboración entre compañeros.</p>
+    </article>
+  </div>
+</section>
+
+<!-- GRADOS Y TEMARIOS -->
+<section id="grados" class="blanco">
+  <h2 class="titulo">Grados y temarios</h2>
+  <div class="linea"></div>
+
+  <p class="intro">
+    Durante los tres grados de secundaria se trabajan distintas
+    áreas de aprendizaje. Los siguientes contenidos son ejemplos
+    generales y deben verificarse con el programa escolar vigente.
+  </p>
+
+  <div class="tarjetas">
+    <article class="tarjeta">
+      <h3>Primer grado</h3>
+      <ul>
+        <li>Español e Inglés</li>
+        <li>Matemáticas</li>
+        <li>Biología</li>
+        <li>Geografía</li>
+        <li>Historia</li>
+        <li>Tecnología y Artes</li>
+        <li>Educación Física</li>
+      </ul>
+    </article>
+
+    <article class="tarjeta">
+      <h3>Segundo grado</h3>
+      <ul>
+        <li>Lenguajes</li>
+        <li>Matemáticas</li>
+        <li>Física</li>
+        <li>Historia</li>
+        <li>Formación Cívica y Ética</li>
+        <li>Tecnología y Artes</li>
+        <li>Educación Física</li>
+      </ul>
+    </article>
+
+    <article class="tarjeta">
+      <h3>Tercer grado</h3>
+      <ul>
+        <li>Español e Inglés</li>
+        <li>Matemáticas</li>
+        <li>Química</li>
+        <li>Historia</li>
+        <li>Formación Cívica y Ética</li>
+        <li>Tecnología y Artes</li>
+        <li>Educación Física</li>
+      </ul>
+    </article>
+  </div>
+
+  <p class="aviso">
+    Los campos formativos y las asignaturas deben presentarse
+    de acuerdo con el plan de estudios vigente y la organización
+    oficial del plantel.
+  </p>
+</section>
+
+<!-- ACTIVIDADES -->
+<section id="actividades">
+  <h2 class="titulo">Actividades escolares</h2>
+  <div class="linea"></div>
+
+  <p class="intro">
+    Las actividades escolares complementan la educación y ayudan
+    a desarrollar la creatividad, la disciplina y el trabajo en equipo.
+  </p>
+
+  <div class="tarjetas">
+    <article class="tarjeta">
+      <img
+        src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80"
+        alt="Actividad deportiva ilustrativa">
+      <h3>Deportes</h3>
+      <p>Participación, compañerismo y hábitos saludables.</p>
+    </article>
+
+    <article class="tarjeta">
+      <img
+        src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80"
+        alt="Materiales para actividades artísticas">
+      <h3>Arte y cultura</h3>
+      <p>Creatividad, expresión artística y tradiciones escolares.</p>
+    </article>
+
+    <article class="tarjeta">
+      <img
+        src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+        alt="Estudiantes colaborando en un proyecto">
+      <h3>Proyectos escolares</h3>
+      <p>Investigación, experimentos y trabajo colaborativo.</p>
+    </article>
+  </div>
+</section>
+
+<!-- INSCRIPCIONES -->
+<section id="inscripciones" class="blanco">
+  <h2 class="titulo">Requisitos de inscripción</h2>
+  <div class="linea"></div>
+
+  <p class="intro">
+    Si deseas ingresar a nuestra escuela, consulta con la dirección
+    escolar los requisitos, las fechas y el procedimiento oficial
+    de inscripción.
+  </p>
+
+  <div class="columnas">
+    <div>
+      <h3>Documentos que podrían solicitarse</h3>
+
+      <ul class="lista">
+        <li>Acta de nacimiento.</li>
+        <li>CURP del estudiante.</li>
+        <li>Certificado de primaria para ingresar a primero.</li>
+        <li>Boleta o documento escolar anterior.</li>
+        <li>Solicitud de inscripción correspondiente.</li>
+        <li>Comprobante de domicilio, cuando corresponda.</li>
+      </ul>
+
+      <p class="aviso">
+        Importante: esta lista es orientativa. Confirma los requisitos
+        vigentes con las autoridades escolares.
+      </p>
+    </div>
+
+    <img
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80"
+      alt="Documentos y materiales de oficina">
+  </div>
+</section>
+
+<!-- COMUNICADOS -->
+<section id="comunicados">
+  <h2 class="titulo">Comunicados y avisos</h2>
+  <div class="linea"></div>
+
+  <p class="intro">
+    Este espacio permite informar a estudiantes y familias
+    sobre fechas importantes, reuniones y eventos escolares.
+  </p>
+
+  <div class="tarjetas">
+    <article class="comunicado">
+      <h3>Inscripciones y reinscripciones</h3>
+      <p>
+        Consulta con la dirección las fechas y los documentos
+        correspondientes al ciclo escolar.
+      </p>
+    </article>
+
+    <article class="comunicado">
+      <h3>Reuniones con las familias</h3>
+      <p>
+        Mantente atento a los avisos oficiales sobre reuniones
+        de madres, padres y tutores.
+      </p>
+    </article>
+
+    <article class="comunicado">
+      <h3>Eventos escolares</h3>
+      <p>
+        Consulta los anuncios oficiales de ceremonias,
+        festivales y actividades académicas.
+      </p>
+    </article>
+  </div>
+
+  <p class="aviso">
+    Los avisos anteriores son ejemplos. Actualiza esta sección
+    únicamente con comunicados reales y fechas confirmadas.
+  </p>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria" class="blanco">
+  <h2 class="titulo">Galería escolar</h2>
+  <div class="linea"></div>
+
+  <p class="intro">
+    Un espacio para conocer nuestras instalaciones y compartir
+    fotografías de la vida escolar.
+  </p>
+
+  <div class="tarjetas">
+    <article class="tarjeta">
+      <img
+        src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80"
+        alt="Edificio escolar ilustrativo">
+      <h3>Instalaciones</h3>
+    </article>
+
+    <article class="tarjeta">
+      <img
+        src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+        alt="Salón escolar ilustrativo">
+      <h3>Salones de clase</h3>
+    </article>
+
+    <article class="tarjeta">
+      <img
+        src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+        alt="Proyecto escolar ilustrativo">
+      <h3>Proyectos</h3>
+    </article>
+  </div>
+
+  <p class="aviso">
+    Estas fotografías son ilustrativas, no imágenes verificadas
+    de la secundaria. Sustitúyelas por las fotografías autorizadas
+    del plantel para personalizar la página.
+  </p>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contacto">
+  <h2 class="titulo">Contáctanos</h2>
+  <div class="linea"></div>
+
+  <p><strong>Institución:</strong> Escuela Secundaria Oficial N.º 298</p>
+  <p><strong>Nombre:</strong> "Dr. Jorge Jiménez Cantú"</p>
+  <p><strong>Ubicación:</strong> Nezahualcóyotl, Estado de México</p>
+  <p><strong>Teléfono:</strong> Consulta el número oficial del plantel.</p>
+  <p><strong>Correo electrónico:</strong> Consulta el correo oficial de la escuela.</p>
+
+  <br>
+
+  <a class="boton"
+     href="https://maps.app.goo.gl/7DHBachPP4Lbt4Tp8?g_st=aw"
+     target="_blank" rel="noopener">
+    Abrir ubicación en Google Maps
+  </a>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>Escuela Secundaria Oficial N.º 298</strong></p>
+  <p>"Dr. Jorge Jiménez Cantú"</p>
+  <p>Nezahualcóyotl, Estado de México</p>
+  <p>Proyecto escolar de página web</p>
+  <p><a href="#inicio">Volver al inicio ↑</a></p>
+</footer>
+
+<!-- GSAP y ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // La página sigue funcionando aunque GSAP no se cargue.
+  if (!window.gsap || !window.ScrollTrigger) {
+    console.warn("No se pudieron cargar GSAP y ScrollTrigger.");
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Respetar la preferencia de reducir movimiento.
+  const movimientoReducido = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (movimientoReducido) return;
+
+  // 1. Las imágenes se expanden suavemente al desplazarse.
+  gsap.utils.toArray(".columnas img, .tarjeta img").forEach((imagen) => {
+    gsap.fromTo(
+      imagen,
+      {
+        clipPath: "inset(12% 12% 12% 12%)",
+        scale: 1.15
+      },
+      {
+        clipPath: "inset(0% 0% 0% 0%)",
+        scale: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: imagen,
+          start: "top 90%",
+          end: "top 35%",
+          scrub: 1
+        }
+      }
+    );
+  });
+
+  // 2. Efecto Parallax en la imagen de portada.
+  gsap.fromTo(
+    ".portada",
+    {
+      backgroundPosition: "center 0%"
+    },
+    {
+      backgroundPosition: "center 45%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".portada",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1
+      }
+    }
+  );
+
+  // 3. Los títulos aparecen suavemente.
+  gsap.utils.toArray(".titulo").forEach((titulo) => {
+    gsap.fromTo(
+      titulo,
+      {
+        y: 25,
+        autoAlpha: 0
+      },
+      {
+        y: 0,
+        autoAlpha: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: titulo,
+          start: "top 88%",
+          toggleActions: "play none none none"
+        }
+      }
+    );
+  });
+
+  // 4. Las tarjetas aparecen progresivamente.
+  gsap.utils.toArray(".tarjetas").forEach((grupo) => {
+    const tarjetas = grupo.querySelectorAll(".tarjeta, .comunicado");
+
+    if (!tarjetas.length) return;
+
+    gsap.fromTo(
+      tarjetas,
+      {
+        y: 30,
+        autoAlpha: 0
+      },
+      {
+        y: 0,
+        autoAlpha: 1,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: grupo,
+          start: "top 85%",
+          once: true
+        }
+      }
+    );
+  });
+
+  // Recalcular posiciones después de cargar las imágenes.
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+  });
+});
+</script>
+
+</body>
+</html>
